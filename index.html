@@ -1,12 +1,105 @@
-<!DOCTYPE html>
+<!-- Author C Camilo Serna  -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WDD 231</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Home</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
-  <h1>WDD 231 – Home</h1>
-  <p>Repository is ready.</p>
+  <header>
+    <!-- Site logo (svg file) + your name in a span -->
+    <div class="site-brand">
+      <a href="index.html" aria-label="Home">
+        <img src="images/logo.svg" alt="Site logo" width="48" height="48">
+      </a>
+      <span class="site-name"></span>
+    </div>
+
+    <!-- Hamburger icon on small screens -->
+    <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <!-- Responsive navigation with 3 links -->
+    <nav aria-label="Primary navigation">
+      <ul id="primaryNav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section>
+      <h2></h2>
+    </section>
+
+    <section>
+      <h2></h2>
+
+      <!-- Course filter (user can filter) -->
+      <div class="course-filters" role="group" aria-label="Course filter">
+        <button type="button" data-filter="all">All</button>
+        <button type="button" data-filter="cse">CSE</button>
+        <button type="button" data-filter="wdd">WDD</button>
+      </div>
+
+      <!-- Number of credits (calculated with reduce in JS) -->
+      <p>Total Credits: <span id="creditTotal"></span></p>
+
+      <!-- Course list (displayed dynamically from course objects array in JS) -->
+      <ul id="courseList" aria-label="Course list"></ul>
+
+      <!-- Placeholder for JS to mark completed courses -->
+      <p id="courseStatus" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h2></h2>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Item 1: Social media links (GitHub, LinkedIn, and one/two others) -->
+    <div class="social-links">
+      <a href="" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="images/github.svg" alt="" width="24" height="24">
+      </a>
+      <a href="" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="images/linkedin.svg" alt="" width="24" height="24">
+      </a>
+      <a href="" target="_blank" rel="noopener noreferrer" aria-label="Social">
+        <img src="images/social.svg" alt="" width="24" height="24">
+      </a>
+    </div>
+
+    <!-- Item 2: Copyright symbol + current year placeholder + name + state/country -->
+    <div class="footer-meta">
+      <p>
+        &copy; <span id="currentyear"></span>
+        <span class="footer-name"></span>
+        <span class="footer-location"></span>
+      </p>
+    </div>
+
+    <!-- Item 3: Last modified (JS) -->
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
 </body>
 </html>
+```
