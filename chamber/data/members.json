@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "name": "Acme Dental Supplies",
+      "address": "123 Main St, Snow City, UT",
+      "phone": "(801) 555-1234",
+      "website": "https://example.com",
+      "image": "acme.jpg",
+      "membershipLevel": 3,
+      "industry": "Dental Supplies"
+    },
+    {
+      "name": "Blue River Marketing",
+      "address": "456 Oak Ave, Snow City, UT",
+      "phone": "(801) 555-5678",
+      "website": "https://example.com",
+      "image": "acme1.jpg",
+      "membershipLevel": 2,
+      "industry": "Marketing"
+    },
+    {
+      "name": "Mountain Tech Solutions",
+      "address": "789 Pine Rd, Snow City, UT",
+      "phone": "(801) 555-9012",
+      "website": "https://example.com",
+      "image": "acme2.jpg",
+      "membershipLevel": 3,
+      "industry": "Technology"
+    },
+    {
+      "name": "Green Leaf Café",
+      "address": "22 Center St, Snow City, UT",
+      "phone": "(801) 555-3344",
+      "website": "https://example.com",
+      "image": "acme3.jpg",
+      "membershipLevel": 1,
+      "industry": "Restaurant"
+    },
+    {
+      "name": "Summit Fitness",
+      "address": "90 Fitness Way, Snow City, UT",
+      "phone": "(801) 555-7788",
+      "website": "https://example.com",
+      "image": "acme4.jpg",
+      "membershipLevel": 2,
+      "industry": "Fitness"
+    },
+    {
+      "name": "Bright Future Realty",
+      "address": "15 Market Blvd, Snow City, UT",
+      "phone": "(801) 555-2222",
+      "website": "https://example.com",
+      "image": "acme5.jpg",
+      "membershipLevel": 3,
+      "industry": "Real Estate"
+    },
+    {
+      "name": "Volcano Print Shop",
+      "address": "310 Press Ln, Snow City , UT",
+      "phone": "(801) 555-9090",
+      "website": "https://example.com",
+      "image": "acme.jpg",
+      "membershipLevel": 1,
+      "industry": "Printing"
+    }
+  ]
+}

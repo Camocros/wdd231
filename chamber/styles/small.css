@@ -1,0 +1,81 @@
+/* ===== Base variables (copiadas de tu estilo anterior) ===== */
+:root{
+  --bg: #f3efe6;
+  --surface: #ffffff;
+  --primary: #1f2a44;
+  --accent: #c26d3a;
+  --text: #111827;
+  --muted: #4b5563;
+  --border: rgba(31, 42, 68, 0.18);
+
+  --font: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --max: 1100px;
+  --pad: 16px;
+  --radius: 14px;
+}
+
+/* ===== Base reset ===== */
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Layout ===== */
+main{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px var(--pad);
+  display: grid;
+  gap: 14px;
+}
+
+/* ===== Directory styles ===== */
+
+.members{
+  display: grid;
+  gap: 16px;
+}
+
+.members.grid{
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.members.list{
+  grid-template-columns: 1fr;
+}
+
+.member-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.member-card h3{
+  margin: 6px 0 2px;
+  color: var(--primary);
+}
+
+.member-card a{
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.member-card a:hover{
+  text-decoration: underline;
+}
