@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Timbuktu Chamber of Commerce | Home</title>
+  <meta name="description" content="Timbuktu Chamber of Commerce home page: events, local weather, and business spotlights.">
+  <meta name="author" content="Camilo Serna">
+
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Shared / base styles (same across chamber pages) -->
+  <link rel="stylesheet" href="styles/chamber.css">
+
+  <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="index.html" aria-label="Home">
+        <img src="images/logo.svg" alt="Timbuktu Chamber of Commerce logo" width="48" height="48">
+      </a>
+      <span class="site-name">Timbuktu Chamber of Commerce</span>
+    </div>
+
+    <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul id="primaryNav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <picture>
+        <source srcset="images/hero.webp" type="image/webp">
+        <img src="images/hero.jpg" alt="Skyline and local businesses in Timbuktu" loading="eager" width="1200" height="500">
+      </picture>
+
+      <div class="hero-overlay">
+        <h1>Welcome to the Timbuktu Chamber</h1>
+        <p>Connect with local businesses, events, and opportunities to grow together.</p>
+        <a class="btn cta" href="join.html">Join the Chamber</a>
+      </div>
+    </section>
+
+    <!-- MAIN GRID: Events + Weather + Forecast -->
+    <section class="grid-3">
+      <!-- EVENTS -->
+      <div class="card">
+        <h2>Current Events</h2>
+        <ul class="events">
+          <li><strong>Business Networking Night</strong><br><span>Thursday 6:00 PM • Downtown Hall</span></li>
+          <li><strong>Small Business Workshop</strong><br><span>Saturday 10:00 AM • Chamber Office</span></li>
+          <li><strong>Community Market</strong><br><span>Sunday 9:00 AM • Central Plaza</span></li>
+        </ul>
+      </div>
+
+      <!-- CURRENT WEATHER -->
+      <div class="card weather">
+        <h2>Current Weather</h2>
+
+        <div class="weather-now">
+          <img id="weatherIcon" alt="" width="64" height="64">
+          <div>
+            <p class="temp"><span id="tempNow">--</span>°</p>
+            <p class="desc" id="weatherDesc">Loading...</p>
+          </div>
+        </div>
+
+        <ul class="weather-meta">
+          <li>Humidity: <span id="humidity">--</span>%</li>
+          <li>Wind: <span id="wind">--</span> m/s</li>
+        </ul>
+      </div>
+
+      <!-- 3-DAY FORECAST -->
+      <div class="card forecast">
+        <h2>3-Day Forecast</h2>
+        <ul id="forecastList" class="forecast-list" aria-label="Three day forecast">
+          <li>Loading...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SPOTLIGHTS -->
+    <section class="spotlights card">
+      <h2>Member Spotlights</h2>
+      <div id="spotlightGrid" class="spotlight-grid" aria-live="polite">
+        <p>Loading spotlights...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="social-links">
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="images/social.svg" alt="" width="24" height="24">
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <img src="images/social.svg" alt="" width="24" height="24">
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="images/linkedin.svg" alt="" width="24" height="24">
+      </a>
+    </div>
+
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce • Timbuktu, Mali</p>
+    </div>
+
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+</body>
+</html>
