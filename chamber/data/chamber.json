@@ -1,0 +1,28 @@
+{
+  "members": [
+    {
+      "name": "Cali Tech Repair",
+      "logo": "images/members/cali-tech-repair.webp",
+      "phone": "+57 602 555 0103",
+      "address": "Granada, Cali, Valle del Cauca",
+      "website": "https://example.com/cali-tech-repair",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Pacífico Logistics",
+      "logo": "images/members/pacifico-logistics.webp",
+      "phone": "+57 602 555 0102",
+      "address": "Aguacatal, Cali, Valle del Cauca",
+      "website": "https://example.com/pacifico-logistics",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Valle Fitness Studio",
+      "logo": "images/members/valle-fitness.webp",
+      "phone": "+57 602 555 0104",
+      "address": "Ciudad Jardín, Cali, Valle del Cauca",
+      "website": "https://example.com/valle-fitness",
+      "membershipLevel": "Silver"
+    }
+  ]
+}

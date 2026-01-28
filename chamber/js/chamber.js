@@ -24,7 +24,10 @@ if (modEl) modEl.textContent = `Last Modified: ${document.lastModified}`;
    WEATHER (OpenWeatherMap)
    - Current temp
    - Description
-   - 3-day forecast
+   - Icon
+   - Humidity
+   - Wind
+   - 3-day temperature forecast
 ========================= */
 const weatherIcon = document.querySelector("#weatherIcon");
 const tempNow = document.querySelector("#tempNow");
@@ -33,28 +36,49 @@ const humidityEl = document.querySelector("#humidity");
 const windEl = document.querySelector("#wind");
 const forecastList = document.querySelector("#forecastList");
 
-// TODO: Put YOUR real chamber location here:
-const lat = 16.7666;   // example (Timbuktu-ish). Replace with your chamber city's lat
-const lon = -3.0026;   // example. Replace with your chamber city's lon
-const units = "imperial"; // "metric" for Celsius
-const apiKey = "YOUR_OPENWEATHERMAP_KEY";
+// Cali, Colombia
+const lat = 3.4516;
+const lon = -76.5320;
+
+// Celsius
+const units = "metric";
+
+// API Key (may take hours to activate)
+const apiKey = "fe9b0d50e2c2a78f9a74be554339e225";
+
+/* ✅ Pending message in the right place:
+   Only show this if the page is still at "Loading..." before we fetch.
+*/
+if (weatherDesc && weatherDesc.textContent.trim().toLowerCase() === "loading...") {
+  weatherDesc.textContent =
+    "Weather data pending: OpenWeatherMap key is still activating. Please refresh later.";
+}
 
 function capitalizeWords(str) {
-  return str
+  return String(str)
     .split(" ")
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .map(w => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
     .join(" ");
 }
 
 function formatDayLabel(dateStr) {
-  // dateStr example: "2026-01-27 12:00:00"
   const d = new Date(dateStr);
   return d.toLocaleDateString("en-US", { weekday: "long" });
 }
 
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    const errData = await res.json().catch(() => ({}));
+    const msg = errData?.message ? ` - ${errData.message}` : "";
+    throw new Error(`OpenWeather error ${res.status}${msg}`);
+  }
+  return res.json();
+}
+
 async function getWeather() {
-  if (!apiKey || apiKey === "YOUR_OPENWEATHERMAP_KEY") {
-    if (weatherDesc) weatherDesc.textContent = "Add your OpenWeatherMap API key in chamber.js";
+  if (!apiKey) {
+    if (weatherDesc) weatherDesc.textContent = "Missing OpenWeatherMap API key.";
     return;
   }
 
@@ -63,43 +87,38 @@ async function getWeather() {
     const currentURL =
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
-    const currentRes = await fetch(currentURL);
-    if (!currentRes.ok) throw new Error("Current weather request failed.");
-    const currentData = await currentRes.json();
+    const currentData = await fetchJson(currentURL);
 
     const temp = Math.round(currentData.main.temp);
-    const desc = capitalizeWords(currentData.weather[0].description);
-    const icon = currentData.weather[0].icon;
+    const desc = capitalizeWords(currentData.weather?.[0]?.description || "N/A");
+    const icon = currentData.weather?.[0]?.icon || "";
 
     if (tempNow) tempNow.textContent = temp;
     if (weatherDesc) weatherDesc.textContent = desc;
-    if (humidityEl) humidityEl.textContent = currentData.main.humidity;
-    if (windEl) windEl.textContent = Math.round(currentData.wind.speed);
+    if (humidityEl) humidityEl.textContent = currentData.main.humidity ?? "--";
+    if (windEl) windEl.textContent = Math.round(currentData.wind?.speed ?? 0);
 
-    if (weatherIcon) {
+    if (weatherIcon && icon) {
       weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
       weatherIcon.alt = desc;
       weatherIcon.loading = "lazy";
     }
 
-    // FORECAST (5-day/3-hour) -> pick one item per day
+    // FORECAST (5-day/3-hour)
     const forecastURL =
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
-    const forecastRes = await fetch(forecastURL);
-    if (!forecastRes.ok) throw new Error("Forecast request failed.");
-    const forecastData = await forecastRes.json();
+    const forecastData = await fetchJson(forecastURL);
 
-    // We select around 12:00 each next day, 3 days total
+    // Pick 3 unique days, prefer 12:00
     const picked = [];
     const seenDays = new Set();
 
     for (const item of forecastData.list) {
-      const dt = item.dt_txt; // "YYYY-MM-DD HH:MM:SS"
-      const hour = dt.slice(11, 13);
+      const dt = item.dt_txt;        // "YYYY-MM-DD HH:MM:SS"
+      const hour = dt.slice(11, 13); // "12"
       const dayKey = dt.slice(0, 10);
 
-      // choose midday samples if possible
       if (hour === "12" && !seenDays.has(dayKey)) {
         seenDays.add(dayKey);
         picked.push(item);
@@ -107,7 +126,7 @@ async function getWeather() {
       if (picked.length === 3) break;
     }
 
-    // fallback: if not enough midday hits, pick first unique days
+    // fallback if needed
     if (picked.length < 3) {
       for (const item of forecastData.list) {
         const dayKey = item.dt_txt.slice(0, 10);
@@ -125,15 +144,15 @@ async function getWeather() {
         const li = document.createElement("li");
         const day = formatDayLabel(item.dt_txt);
         const t = Math.round(item.main.temp);
-
-        li.innerHTML = `<span>${day}</span><strong>${t}°</strong>`;
+        li.innerHTML = `<span>${day}</span><strong>${t}°C</strong>`;
         forecastList.appendChild(li);
       });
     }
 
   } catch (err) {
-    if (weatherDesc) weatherDesc.textContent = "Weather unavailable right now.";
-    if (forecastList) forecastList.innerHTML = "<li>Forecast unavailable.</li>";
+    // Show real error in the UI
+    if (weatherDesc) weatherDesc.textContent = String(err.message || err);
+    if (forecastList) forecastList.innerHTML = `<li>Forecast unavailable.</li>`;
     console.error(err);
   }
 }
@@ -141,7 +160,7 @@ async function getWeather() {
 getWeather();
 
 /* =========================
-   SPOTLIGHTS (members.json)
+   SPOTLIGHTS (chamber.json)
    - fetch + async/await
    - gold/silver only
    - random 2 or 3 each load
@@ -183,17 +202,26 @@ async function loadSpotlights() {
   if (!spotlightGrid) return;
 
   try {
-    const res = await fetch("data/members.json");
-    if (!res.ok) throw new Error("members.json not found.");
+    // ✅ changed here to chamber.json
+    const res = await fetch("data/chamber.json");
+    if (!res.ok) throw new Error("chamber.json not found. Check path: chamber/data/chamber.json");
+
     const data = await res.json();
 
-    // Your JSON might be { "members": [...] } or just [...]
-    const members = Array.isArray(data) ? data : (data.members || []);
+    // supports: { "members": [...] } OR { "companies": [...] } OR just [...]
+    const members = Array.isArray(data)
+      ? data
+      : (data.members || data.companies || []);
 
     const eligible = members.filter(m => {
       const level = String(m.membershipLevel || m.level || "").toLowerCase();
       return level.includes("gold") || level.includes("silver");
     });
+
+    if (eligible.length === 0) {
+      spotlightGrid.innerHTML = "<p>No Gold/Silver members found in chamber.json.</p>";
+      return;
+    }
 
     const howMany = Math.random() < 0.5 ? 2 : 3;
     const selected = shuffleArray(eligible).slice(0, howMany);
@@ -202,7 +230,7 @@ async function loadSpotlights() {
     selected.forEach(m => spotlightGrid.appendChild(buildSpotlightCard(m)));
 
   } catch (err) {
-    spotlightGrid.innerHTML = "<p>Spotlights unavailable.</p>";
+    spotlightGrid.innerHTML = `<p>Spotlights unavailable: ${String(err.message || err)}</p>`;
     console.error(err);
   }
 }
