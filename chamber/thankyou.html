@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cali Chamber of Commerce | Thank You</title>
+  <meta name="description" content="Thank you for submitting your Cali Chamber membership application.">
+  <meta name="author" content="Camilo Serna">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cali Chamber of Commerce | Thank You">
+  <meta property="og:description" content="Thank you for submitting your Cali Chamber membership application.">
+  <meta property="og:image" content="images/og-card.webp">
+  <meta property="og:url" content="thankyou.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 2 CSS files -->
+  <link rel="stylesheet" href="styles/chamber.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+ <script src="../scripts/script.js" defer></script>
+<script src="../scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="index.html" aria-label="Home">
+        <img src="images/logo.svg" alt="Cali Chamber of Commerce logo" width="48" height="48">
+      </a>
+      <span class="site-name">Cali Chamber of Commerce</span>
+    </div>
+
+    <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="thankyou-page">
+    <h1>Thank You!</h1>
+    <p class="lead">We received your application. Here is the required information you submitted:</p>
+
+    <section class="card summary" aria-label="Submitted application summary">
+      <dl id="formSummary" class="summary-list"></dl>
+      <a class="btn" href="join.html">Back to Join</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Cali Chamber of Commerce • Cali, Colombia</p>
+    </div>
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+</body>
+</html>

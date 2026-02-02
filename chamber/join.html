@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cali Chamber of Commerce | Join</title>
+  <meta name="description" content="Apply to join the Cali Chamber of Commerce. Choose a membership level and submit your application.">
+  <meta name="author" content="Camilo Serna">
+
+  <!-- Open Graph (fix missing OG tags) -->
+  <meta property="og:title" content="Cali Chamber of Commerce | Join">
+  <meta property="og:description" content="Apply to join the Cali Chamber of Commerce. Choose a membership level and submit your application.">
+  <meta property="og:image" content="images/og-card.webp">
+  <meta property="og:url" content="join.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="images/C.jpeg">
+
+  <!-- Google Fonts (fix missing fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 2 CSS files (fix rubric + prior feedback) -->
+  <link rel="stylesheet" href="styles/chamber.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- scripts subfolder required -->
+ <script src="../scripts/script.js" defer></script>
+<script src="../scripts/join.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="index.html" aria-label="Home">
+        <img src="images/C.jpeg" alt="Cali Chamber of Commerce logo" width="48" height="48">
+      </a>
+      <span class="site-name">Cali Chamber of Commerce</span>
+    </div>
+
+    <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" aria-current="page">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="join-page">
+    <h1>Join the Chamber</h1>
+    <p class="lead">Fill out the form to apply for membership in the Cali Chamber of Commerce.</p>
+
+    <section class="join-layout" aria-label="Membership application and membership level details">
+      <!-- FORM -->
+      <form class="join-form" method="get" action="thankyou.html" aria-label="Chamber membership application form">
+        <fieldset>
+          <legend>Applicant Information</legend>
+
+          <label>
+            First Name <span class="req" aria-hidden="true">*</span>
+            <input
+              type="text"
+              name="fname"
+              title="Enter your first name"
+              autocomplete="given-name"
+              required>
+          </label>
+
+          <label>
+            Last Name <span class="req" aria-hidden="true">*</span>
+            <input
+              type="text"
+              name="lname"
+              title="Enter your last name"
+              autocomplete="family-name"
+              required>
+          </label>
+
+          <label>
+            Organizational Title
+            <input
+              type="text"
+              name="orgtitle"
+              title="Enter your organizational title (min 7 characters; letters, hyphens, spaces only)"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\-\s]{7,}"
+              placeholder="e.g., Marketing Lead">
+          </label>
+
+          <label>
+            Email Address <span class="req" aria-hidden="true">*</span>
+            <input
+              type="email"
+              name="email"
+              title="Enter a valid email address"
+              autocomplete="email"
+              placeholder="name@example.com"
+              required>
+          </label>
+
+          <label>
+            Mobile Phone <span class="req" aria-hidden="true">*</span>
+            <input
+              type="tel"
+              name="phone"
+              title="Enter your mobile phone number"
+              autocomplete="tel"
+              required>
+          </label>
+
+          <label>
+            Business / Organization Name <span class="req" aria-hidden="true">*</span>
+            <input
+              type="text"
+              name="org"
+              title="Enter your business or organization name"
+              autocomplete="organization"
+              required>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Membership Selection</legend>
+
+          <label>
+            Membership Level <span class="req" aria-hidden="true">*</span>
+            <select name="level" title="Select a membership level" required>
+              <option value="" selected disabled>Select a level…</option>
+              <option value="np">NP Membership (Nonprofit, Free)</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
+            </select>
+          </label>
+
+          <label>
+            Business / Organization Description
+            <textarea
+              name="description"
+              title="Describe your business or organization"
+              rows="5"
+              placeholder="Tell us what you do…"></textarea>
+          </label>
+
+          <!-- Hidden timestamp (required) -->
+          <input type="hidden" name="timestamp" id="timestamp">
+        </fieldset>
+
+        <input type="submit" value="Submit Application">
+      </form>
+
+      <!-- MEMBERSHIP CARDS -->
+      <aside class="membership-cards" aria-label="Membership levels and benefits">
+        <h2>Membership Levels</h2>
+
+        <article class="m-card animate-in">
+          <h3>NP Membership</h3>
+          <p>For nonprofit organizations — no fee.</p>
+          <a href="#modal-np" class="modal-link" data-modal="modal-np">See benefits</a>
+        </article>
+
+        <article class="m-card animate-in">
+          <h3>Bronze</h3>
+          <p>Entry-level benefits and community support.</p>
+          <a href="#modal-bronze" class="modal-link" data-modal="modal-bronze">See benefits</a>
+        </article>
+
+        <article class="m-card animate-in">
+          <h3>Silver</h3>
+          <p>More visibility and training opportunities.</p>
+          <a href="#modal-silver" class="modal-link" data-modal="modal-silver">See benefits</a>
+        </article>
+
+        <article class="m-card animate-in">
+          <h3>Gold</h3>
+          <p>Maximum exposure and premium benefits.</p>
+          <a href="#modal-gold" class="modal-link" data-modal="modal-gold">See benefits</a>
+        </article>
+      </aside>
+    </section>
+
+    <!-- MODALS (4 required) -->
+    <dialog id="modal-np" class="modal" aria-label="NP membership benefits">
+      <div class="modal-inner">
+        <h2>NP Membership Benefits</h2>
+        <ul>
+          <li>Free membership for verified nonprofits</li>
+          <li>Access to Chamber events calendar</li>
+          <li>Networking opportunities with members</li>
+          <li>Monthly newsletter listing</li>
+        </ul>
+        <button type="button" class="modal-close">Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-bronze" class="modal" aria-label="Bronze membership benefits">
+      <div class="modal-inner">
+        <h2>Bronze Membership Benefits</h2>
+        <ul>
+          <li>Member directory listing</li>
+          <li>Invitation to quarterly networking events</li>
+          <li>Selected training workshops</li>
+          <li>Basic event discounts</li>
+        </ul>
+        <button type="button" class="modal-close">Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-silver" class="modal" aria-label="Silver membership benefits">
+      <div class="modal-inner">
+        <h2>Silver Membership Benefits</h2>
+        <ul>
+          <li>Everything in Bronze</li>
+          <li>Priority directory placement</li>
+          <li>Member-only training sessions</li>
+          <li>Higher event discounts</li>
+          <li>Eligible for homepage spotlight rotation (as available)</li>
+        </ul>
+        <button type="button" class="modal-close">Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-gold" class="modal" aria-label="Gold membership benefits">
+      <div class="modal-inner">
+        <h2>Gold Membership Benefits</h2>
+        <ul>
+          <li>Everything in Silver</li>
+          <li>Premium homepage spotlight priority</li>
+          <li>Premium event discounts</li>
+          <li>Special invitation-only events</li>
+          <li>Advertising opportunities through Chamber channels</li>
+        </ul>
+        <button type="button" class="modal-close">Close</button>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Cali Chamber of Commerce • Cali, Colombia</p>
+    </div>
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+</body>
+</html>
