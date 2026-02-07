@@ -3,3 +3,21 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
+/* discover part /*
+
+/* ==============================
+   DISCOVER PAGE – LARGE VIEW
+   CRITERIA: Grid Areas (different layout)
+   ============================== */
+
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "c1 c2 c3"
+      "c4 c4 c5"
+      "c6 c7 c5"
+      "c8 c8 c8";
+  }
+}

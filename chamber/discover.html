@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- =====================================================
+       CRITERIA: Page Audit / SEO / Standards
+       ===================================================== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cali Chamber of Commerce | Discover</title>
+  <meta name="description" content="Discover Cali, Colombia. Learn about local attractions, culture, and points of interest for visitors and chamber members.">
+  <meta name="author" content="Camilo Serna">
+
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- =====================================================
+       IMPORTANT: SAME CSS AS index.html
+       ===================================================== -->
+  <link rel="stylesheet" href="styles/chamber.css">
+
+  <!-- =====================================================
+       IMPORTANT: SAME JS AS index.html (menu, etc.)
+       ===================================================== -->
+  <script src="js/chamber.js" defer></script>
+
+  <!-- =====================================================
+       Discover-specific JS (module for .mjs import)
+       ===================================================== -->
+  <script type="module" src="js/discover.js"></script>
+</head>
+
+<body>
+  <!-- =====================================================
+       HEADER + NAV (EXACT COPY FROM index.html)
+       CRITERIA: Navigation & Wayfinding
+       ===================================================== -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="index.html" aria-label="Home">
+        <img src="images/C.jpeg" alt="Cali Chamber of Commerce logo" width="48" height="48">
+      </a>
+      <span class="site-name">Cali Chamber of Commerce</span>
+    </div>
+
+    <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <!-- Wayfinding -->
+        <li><a href="discover.html" aria-current="page">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <main class="discover">
+    <h1>Discover Cali</h1>
+
+    <!-- =====================================================
+         CRITERIA: Custom Message using localStorage
+         ===================================================== -->
+    <p id="visitMessage" class="visit-message"></p>
+
+    <!-- =====================================================
+         CRITERIA:
+         - JSON Data (.mjs)
+         - Card Design
+         - Named Grid Areas
+         - Lazy Loading
+         ===================================================== -->
+    <section
+      id="discoverGrid"
+      class="discover-grid"
+      aria-label="Points of interest in Cali, Colombia">
+    </section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER (EXACT COPY STRUCTURE)
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="social-links">
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="images/C.jpeg" alt="" width="24" height="24">
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <img src="images/C.jpeg" alt="" width="24" height="24">
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="images/C.jpeg" alt="" width="24" height="24">
+      </a>
+    </div>
+
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Cali Chamber of Commerce • Cali, Colombia</p>
+    </div>
+
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       Footer utility (same pattern as other pages)
+       ===================================================== -->
+  <script>
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+  </script>
+</body>
+</html>

@@ -286,3 +286,120 @@ footer > div{
 @media (min-width: 1200px){
   :root{ --pad: 18px; }
 }
+
+
+/* Disvover Web page */ /* =========================
+   DISCOVER PAGE STYLES
+   ========================= */
+
+/* ✅ Criteria: Web Design Principles (spacing, alignment, no horizontal scroll) */
+.discover {
+  padding: 1rem;
+}
+
+.visit-message {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 0.5rem 0 1rem;
+}
+
+/* ✅ Criteria: Named Grid Areas (base layout = small) */
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "c1"
+    "c2"
+    "c3"
+    "c4"
+    "c5"
+    "c6"
+    "c7"
+    "c8";
+}
+
+/* ✅ Criteria: Card Design */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card img {
+  display: block;
+  max-width: 100%; /* ✅ prevents overflow => no horizontal scroll */
+  height: auto;
+  border-radius: 12px;
+}
+
+.card address {
+  font-style: normal;
+  margin: 0.6rem 0;
+}
+
+.card button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Grid areas mapping */
+.card1 { grid-area: c1; }
+.card2 { grid-area: c2; }
+.card3 { grid-area: c3; }
+.card4 { grid-area: c4; }
+.card5 { grid-area: c5; }
+.card6 { grid-area: c6; }
+.card7 { grid-area: c7; }
+.card8 { grid-area: c8; }
+
+/* ✅ Criteria: Named Grid Areas - MEDIUM layout (different pattern) */
+@media (min-width: 641px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c2"
+      "c3 c3"
+      "c4 c5"
+      "c6 c7"
+      "c8 c8";
+  }
+
+  /* ✅ Criteria: Image Hover Effect ONLY for larger views (not mobile) */
+  .card img {
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05) contrast(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+}
+
+/* ✅ Criteria: Named Grid Areas - LARGE layout (third pattern, different again) */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "c1 c2 c3"
+      "c4 c4 c5"
+      "c6 c7 c5"
+      "c8 c8 c8";
+  }
+}
+ 

@@ -1,0 +1,28 @@
+/* discover part /*
+
+/* ==============================
+   DISCOVER PAGE – MEDIUM VIEW
+   CRITERIA: Grid Areas + Hover Effects
+   ============================== */
+
+@media (min-width: 641px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c2"
+      "c3 c3"
+      "c4 c5"
+      "c6 c7"
+      "c8 c8";
+  }
+
+  /* Hover effect (NOT mobile) */
+  .card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
