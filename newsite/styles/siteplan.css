@@ -1,0 +1,116 @@
+:root{
+  --bg: #D1FAE5;         /* light green */
+  --olive: #556B2F;      /* olive green */
+  --text: #0f172a;       /* dark navy for readability */
+  --card: #ffffff;
+  --border: rgba(85, 107, 47, 0.25);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.site-header{
+  padding: 1.5rem 1rem;
+  border-bottom: 3px solid var(--olive);
+}
+
+.site-header h1{
+  margin: 0 0 .25rem 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--olive);
+  letter-spacing: .2px;
+}
+
+.tagline{
+  margin: 0;
+  max-width: 70ch;
+}
+
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+h2, h3{
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--olive);
+  margin-top: 0;
+}
+
+.note{
+  font-size: .95rem;
+  opacity: .9;
+}
+
+.colors{
+  display: grid;
+  gap: 1rem;
+}
+
+.color-swatch{
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: .75rem;
+}
+
+.swatch{
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: .5rem;
+}
+
+.light-green{ background: var(--bg); }
+.olive{ background: var(--olive); }
+
+.use{ margin: .25rem 0 0 0; }
+
+.wireframe{
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .75rem;
+  display: grid;
+  gap: .5rem;
+}
+
+.wf-box{
+  background: #ffffff;
+  border: 2px solid var(--olive);
+  border-radius: 10px;
+  padding: .6rem;
+  font-size: .95rem;
+}
+
+.wf-row{
+  display: grid;
+  gap: .5rem;
+}
+
+@media (min-width: 700px){
+  .colors{ grid-template-columns: 1fr 1fr; }
+  .wf-row{ grid-template-columns: 1fr 1fr; }
+}
+
+.site-footer{
+  padding: 1rem;
+  text-align: center;
+  border-top: 2px solid var(--olive);
+}
