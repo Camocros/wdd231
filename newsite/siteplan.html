@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nadia | Site Plan</title>
-  <meta name="description" content="Site plan for Nadia LLC - Behavior Support Framework for early childhood and parents." />
+  <meta name="description" content="Site plan for Nadia LLC - Behavior Support Framework for early childhood and parents.">
 
-  <!-- Typography (simple + clean) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/siteplan.css" />
+  <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 
 <body>
@@ -25,19 +25,20 @@
       <h2>Site Name</h2>
       <p><strong>Nadia</strong></p>
       <p>
-        This name is short, memorable, and matches the brand name of the organization (Nadia LLC),
-        making it easy for child care teams and parents to recognize and search for.
+        This name is short, memorable, and matches the organization’s brand (Nadia LLC),
+        making it easy for child care teams and parents to recognize and trust.
       </p>
-      <p class="note"><strong>Optional domain idea:</strong> nadiaframework.com (example)</p>
+      <p class="note"><strong>Optional domain idea:</strong> nadiaframework.com</p>
     </section>
 
     <section class="card" id="purpose">
       <h2>Site Purpose</h2>
       <p>
-        The Nadia website provides a clear and practical Behavior Support Framework for child care settings and families.
-        It will explain how the framework works, who it is for (early childhood teams and parents), and how to get started.
-        The site will include an overview of the framework, strategies and tools, a simple contact/interest form, and
-        resources that support consistent behavior practices at school and at home.
+        The Nadia website provides a practical Behavior Support Framework for child care settings
+        and families. The site explains how the framework works, who it is for, and how to apply
+        consistent behavior strategies both in early childhood education environments and at home.
+        It includes an overview of the framework, tools and resources, and a way for users to
+        express interest or request more information.
       </p>
     </section>
 
@@ -45,28 +46,28 @@
       <h2>Scenarios</h2>
       <ul>
         <li><strong>What is the age range of children this framework is designed for?</strong></li>
-        <li><strong>Is this framework also useful for parents at home, or only for child care staff?</strong></li>
+        <li><strong>Is this behavior support framework also useful for parents at home?</strong></li>
       </ul>
     </section>
 
     <section class="card" id="color-scheme">
       <h2>Color Scheme</h2>
       <p>
-        The color palette is calm and nature-based to communicate care, growth, and emotional safety.
-        The site plan document uses these same colors.
+        The color palette uses calming greens to communicate growth, emotional safety, and trust.
+        These colors are applied throughout this site plan document.
       </p>
 
       <div class="colors">
         <div class="color-swatch">
           <div class="swatch light-green"></div>
           <p><strong>Light Green</strong> — <code>#D1FAE5</code></p>
-          <p class="use">Use: page background, card backgrounds, soft sections.</p>
+          <p class="use">Used for page background and soft section backgrounds.</p>
         </div>
 
         <div class="color-swatch">
           <div class="swatch olive"></div>
           <p><strong>Olive Green</strong> — <code>#556B2F</code></p>
-          <p class="use">Use: headings, buttons/accents, borders, links.</p>
+          <p class="use">Used for headings, accents, borders, and emphasis.</p>
         </div>
       </div>
     </section>
@@ -74,39 +75,40 @@
     <section class="card" id="typography">
       <h2>Typography</h2>
       <ul>
-        <li><strong>Poppins</strong> (Headings): used for titles and section headers to look modern and confident.</li>
-        <li><strong>Inter</strong> (Body): used for paragraphs and lists for readability and clean UI.</li>
+        <li><strong>Poppins</strong> is used for headings to create a friendly and modern tone.</li>
+        <li><strong>Inter</strong> is used for body text to ensure readability and clarity.</li>
       </ul>
       <p class="note">
-        This site plan document already applies these fonts (Poppins for headings, Inter for body).
+        These fonts are actively applied in this site plan document.
       </p>
     </section>
 
     <section class="card" id="wireframe">
       <h2>Wireframe</h2>
       <p>
-        Below are simple wireframes for the Home page layout. These are layout sketches (not final design).
+        The following wireframes represent the layout of the Home page for mobile and desktop views.
+        These sketches show structure only and do not represent final design.
       </p>
 
-      <h3>Mobile View (stacked layout)</h3>
-      <div class="wireframe wf-mobile" aria-label="Mobile wireframe">
+      <h3 id="wf-mobile-title">Mobile View (stacked layout)</h3>
+      <section class="wireframe wf-mobile" aria-labelledby="wf-mobile-title">
         <div class="wf-box">Header / Logo</div>
-        <div class="wf-box">Hero (headline + CTA button)</div>
+        <div class="wf-box">Hero (headline + call to action)</div>
         <div class="wf-box">Framework Overview</div>
-        <div class="wf-box">Who It’s For (Child Care + Parents)</div>
-        <div class="wf-box">Key Benefits / Features</div>
-        <div class="wf-box">Resources / Tools</div>
+        <div class="wf-box">Who It’s For (Child Care & Parents)</div>
+        <div class="wf-box">Key Benefits</div>
+        <div class="wf-box">Resources & Tools</div>
         <div class="wf-box">Contact / Interest Form</div>
         <div class="wf-box">Footer</div>
-      </div>
+      </section>
 
-      <h3>Desktop/Tablet View (wider layout)</h3>
-      <div class="wireframe wf-desktop" aria-label="Desktop wireframe">
+      <h3 id="wf-desktop-title">Desktop / Tablet View (wider layout)</h3>
+      <section class="wireframe wf-desktop" aria-labelledby="wf-desktop-title">
         <div class="wf-row">
           <div class="wf-box">Header / Logo</div>
           <div class="wf-box">Navigation</div>
         </div>
-        <div class="wf-box">Hero (headline left) + Image/Illustration (right) + CTA</div>
+        <div class="wf-box">Hero section with headline, image, and CTA</div>
         <div class="wf-row">
           <div class="wf-box">Framework Overview</div>
           <div class="wf-box">Who It’s For</div>
@@ -115,27 +117,24 @@
           <div class="wf-box">Key Benefits</div>
           <div class="wf-box">Resources</div>
         </div>
-        <div class="wf-box">Contact / Interest Form (full width)</div>
+        <div class="wf-box">Contact / Interest Form</div>
         <div class="wf-box">Footer</div>
-      </div>
+      </section>
     </section>
 
     <section class="card" id="testing">
       <h2>Testing</h2>
       <ul>
-        <li><strong>HTML Validation:</strong> W3C Markup Validator</li>
-        <li><strong>Accessibility:</strong> WAVE Web Accessibility Evaluation Tool</li>
-        <li><strong>Best Practices, SEO, Performance:</strong> Lighthouse / PageSpeed Insights</li>
-        <li><strong>Color Contrast:</strong> WebAIM Contrast Checker</li>
+        <li>HTML Validation using W3C Markup Validator</li>
+        <li>Accessibility testing using WAVE</li>
+        <li>Best practices, SEO, and performance using Lighthouse</li>
+        <li>Color contrast verification using WebAIM Contrast Checker</li>
       </ul>
-      <p class="note">
-        Goal: fix any validation errors, ensure headings are in order, and keep good contrast between olive text and light backgrounds.
-      </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© Nadia LLC — Site Plan (WDD231)</p>
+    <p>© Nadia LLC — WDD231 Site Plan</p>
   </footer>
 </body>
 </html>
