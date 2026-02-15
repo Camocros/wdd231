@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nadia Behavior Framework | Strategies</title>
+  <meta name="description" content="Browse behavior support strategies and save favorites for routines, transitions, communication, and self-regulation.">
+  <meta name="author" content="Camilo Serna">
+
+  <meta property="og:title" content="Nadia Behavior Framework | Strategies">
+  <meta property="og:description" content="Browse 15+ practical strategies. Filter by category and open details in a modal.">
+  <meta property="og:type" content="website">
+
+   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+
+<body data-page="catalog">
+<header>
+  <div class="container navbar">
+     <a class="brand" href="./index.html" aria-label="Home">
+  <img
+    src="images/nadialogo.png"
+    alt="Nadia Behavior logo"
+    width="200"
+    height="180"
+    loading="lazy"
+  >
+</a>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false">☀️ Light</button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">☰ Menu</button>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="./index.html">Home</a></li> 
+        <li><a class="active" href="./catalog.html">Framework</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Framework Strategies</h1>
+  <p class="muted" id="status">Loading strategies…</p>
+
+  <div class="controls">
+    <label for="categoryFilter">Filter by category</label>
+    <select id="categoryFilter" name="categoryFilter">
+      <option value="all">All</option>
+    </select>
+  </div>
+
+  <section id="programList" class="grid" aria-live="polite"></section> 
+
+  <dialog id="detailsDialog" aria-labelledby="dialogTitle">
+    <div class="card" style="background:transparent;border:none;padding:0;">
+      <h2 id="dialogTitle" data-modal-title style="margin-top:0;">Details</h2>
+      <div data-modal-body></div>
+      <p style="margin-top:1rem;">
+        <button class="btn" type="button" data-close>Close</button>
+      </p>
+    </div>
+  </dialog>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Camilo Serna · <a href="./attributions.html">Attributions</a></p>
+    <p><a href=" you tube video link here ">Project Video</a></p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navList = document.getElementById("navList");
+  if (menuBtn && navList) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navList.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

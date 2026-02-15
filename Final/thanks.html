@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanks | Nadia Behavior Framework</title>
+  <meta name="description" content="Form action page showing submitted form values.">
+  <meta name="author" content="Camilo Serna">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+<main class="container">
+  <h1>Thanks!</h1>
+  <p class="muted">Here is the data you submitted:</p>
+
+  <section class="card" id="results"></section>
+
+  <p><a class="btn" href="./contact.html">Back to Contact</a></p>
+</main>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const fields = ["fullName","email","topic","message"];
+  const html = fields.map(f => `<p><strong>${f}:</strong> ${params.get(f) ? params.get(f).replaceAll("<","&lt;") : ""}</p>`).join("");
+  document.getElementById("results").innerHTML = html || "<p>No data received.</p>";
+</script>
+</body>
+</html>

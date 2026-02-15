@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nadia Behavior Framework | Home</title>
+  <meta name="description" content="A practical behavior support framework with strategies for routines, transitions, communication, and self-regulation.">
+  <meta name="author" content="Camilo Serna">
+
+  <meta property="og:title" content="Nadia Behavior Framework">
+  <meta property="og:description" content="Practical strategies to support children with routines, transitions, and emotional regulation.">
+  <meta property="og:type" content="website">
+
+ <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+
+<body data-page="home">
+<header>
+  <div class="container navbar">
+   <a class="brand" href="./index.html" aria-label="Home">
+  <img
+    src="images/nadialogo.png"
+    alt="Nadia Behavior logo"
+    width="200"
+    height="180"
+    loading="lazy"
+  >
+</a>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false">☀️ Light</button>
+
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">
+        ☰ Menu
+      </button>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul id="navList">
+        <li><a class="active" href="./index.html">Home</a></li>
+        <li><a href="./catalog.html">Framework</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <h1>Behavior Support Framework for Real Life</h1>
+      <p class="muted">
+        A clean, practical collection of strategies for routines, transitions, communication, motivation, and self-regulation.
+      </p>
+      <p>
+        <a class="btn" href="./catalog.html">Explore the Framework</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">What you’ll find</h2>
+      <ul>
+        <li>15+ actionable strategies</li>
+        <li>Clear steps + tips for caregivers</li>
+        <li>Save favorites for later</li>
+      </ul>
+      <p class="muted">Built with HTML/CSS/JS (no frameworks). author CCS </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0;">How this site meets requirements</h2>
+    <ul>
+      <li>Data is fetched from a JSON file and rendered dynamically.</li>
+      <li>Filters use array methods and DOM events.</li>
+      <li>Favorites and theme are saved with localStorage.</li>
+      <li>Details open in an accessible modal dialog.  CCS.</li>
+      <h1> How Nadia Works</h1>
+         <li> Interactive Trainings
+Engaging, hands-on trainings that help educators understand the function of behavior, identify patterns and root causes, and apply effective, relationship centered strategies. Offered in both English and Spanish because at Nadia, we believe educators deserve access to trainings they truly understand.</li>
+          <li> Program Level Consulting
+Nadia partners directly with early education programs to implement Nadia’s behavior support framework, build systems for data tracking and behavior support plans, strengthen teacher family communication, and develop sustainable, equitable practices where exclusion is the last resort and inclusive environments are the standard.
+</li>
+           <li> Behavior Support Strategies
+Nadia will provide step by step behavior strategies that help educators understand what behavior is communicating, recognize patterns and function, and choose the most effective response in the moment.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Camilo Serna · <a href="./attributions.html">Attributions</a></p>
+    <p><a href="you tube video link here ">Project Video</a></p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navList = document.getElementById("navList");
+  if (menuBtn && navList) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navList.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

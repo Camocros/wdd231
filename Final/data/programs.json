@@ -1,0 +1,137 @@
+[
+  {
+    "id": "nb-01",
+    "title": "Visual Schedule",
+    "category": "Routines",
+    "ageRange": "3–10",
+    "goal": "Increase independence and reduce anxiety during transitions.",
+    "steps": ["Choose 4–6 daily steps", "Use simple icons/photos", "Review before transitions", "Reinforce completion"],
+    "tip": "Start with morning routines; keep it consistent for 2 weeks."
+  },
+  {
+    "id": "nb-02",
+    "title": "First–Then Board",
+    "category": "Transitions",
+    "ageRange": "3–8",
+    "goal": "Help children complete a non-preferred task before a preferred one.",
+    "steps": ["Pick 1 short task", "Pick 1 reward", "Show board", "Celebrate completion"],
+    "tip": "Keep 'First' very short at the beginning."
+  },
+  {
+    "id": "nb-03",
+    "title": "Token Reinforcement",
+    "category": "Motivation",
+    "ageRange": "5–12",
+    "goal": "Build motivation through small earned rewards.",
+    "steps": ["Pick target behavior", "Pick token type", "Set exchange rate", "Fade tokens gradually"],
+    "tip": "Use immediate praise with each token."
+  },
+  {
+    "id": "nb-04",
+    "title": "Calm Corner Setup",
+    "category": "Self-Regulation",
+    "ageRange": "3–12",
+    "goal": "Provide a safe space to practice calming skills.",
+    "steps": ["Choose quiet spot", "Add calming tools", "Teach how to use", "Practice when calm"],
+    "tip": "It's not a punishment space—teach it proactively."
+  },
+  {
+    "id": "nb-05",
+    "title": "Emotion Labeling",
+    "category": "Communication",
+    "ageRange": "3–10",
+    "goal": "Improve emotional vocabulary and reduce escalations.",
+    "steps": ["Use emotion cards", "Model labeling", "Ask 'How do you feel?'", "Validate and coach"],
+    "tip": "Use 3 basic emotions first: mad/sad/happy."
+  },
+  {
+    "id": "nb-06",
+    "title": "Choice Making",
+    "category": "Motivation",
+    "ageRange": "3–12",
+    "goal": "Reduce power struggles with controlled choices.",
+    "steps": ["Offer 2 acceptable choices", "Use neutral tone", "Repeat once", "Follow through"],
+    "tip": "Both options must be truly okay for you."
+  },
+  {
+    "id": "nb-07",
+    "title": "Transition Countdown",
+    "category": "Transitions",
+    "ageRange": "3–12",
+    "goal": "Improve compliance and reduce surprise transitions.",
+    "steps": ["Give 5-min warning", "Give 2-min warning", "Use visual timer", "Praise smooth transitions"],
+    "tip": "Pair warnings with a simple next-step instruction."
+  },
+  {
+    "id": "nb-08",
+    "title": "Positive Practice",
+    "category": "Routines",
+    "ageRange": "5–12",
+    "goal": "Teach the correct behavior by practicing it.",
+    "steps": ["Explain expectation", "Practice correct version", "Repeat 2–3 times", "Reinforce success"],
+    "tip": "Keep it short and calm—avoid lectures."
+  },
+  {
+    "id": "nb-09",
+    "title": "Behavior Specific Praise",
+    "category": "Communication",
+    "ageRange": "3–12",
+    "goal": "Increase desired behaviors through precise praise.",
+    "steps": ["Notice the behavior", "Name it", "Add enthusiasm", "Be immediate"],
+    "tip": "Praise effort + strategy, not only results."
+  },
+  {
+    "id": "nb-10",
+    "title": "Premack Principle",
+    "category": "Motivation",
+    "ageRange": "4–12",
+    "goal": "Use a high-probability behavior to reinforce a low-probability one.",
+    "steps": ["Pick preferred activity", "Pair with non-preferred task", "Keep task short", "Deliver reward immediately"],
+    "tip": "Use it for homework, hygiene, cleanup."
+  },
+  {
+    "id": "nb-11",
+    "title": "Functional Communication",
+    "category": "Communication",
+    "ageRange": "3–12",
+    "goal": "Replace challenging behavior with a communication skill.",
+    "steps": ["Identify function", "Teach a simple request", "Prompt early", "Reinforce fast"],
+    "tip": "Start with 1–2 easy phrases/signs."
+  },
+  {
+    "id": "nb-12",
+    "title": "Stop–Think–Do",
+    "category": "Self-Regulation",
+    "ageRange": "6–12",
+    "goal": "Teach impulse control and problem solving.",
+    "steps": ["Teach the 3 steps", "Role-play scenarios", "Use visual cue", "Reinforce using strategy"],
+    "tip": "Practice during calm times first."
+  },
+  {
+    "id": "nb-13",
+    "title": "Task Chunking",
+    "category": "Routines",
+    "ageRange": "5–12",
+    "goal": "Reduce overwhelm by breaking tasks into small steps.",
+    "steps": ["Break into 3–6 steps", "Do one step at a time", "Check off progress", "Reinforce completion"],
+    "tip": "Use checklists and keep steps visible."
+  },
+  {
+    "id": "nb-14",
+    "title": "Coping Menu",
+    "category": "Self-Regulation",
+    "ageRange": "4–12",
+    "goal": "Provide a list of calming options a child can choose from.",
+    "steps": ["Pick 6–10 coping skills", "Teach each one", "Practice daily", "Use during early signs"],
+    "tip": "Include movement + breathing + sensory options."
+  },
+  {
+    "id": "nb-15",
+    "title": "Data Snapshot",
+    "category": "Progress Tracking",
+    "ageRange": "3–12",
+    "goal": "Track patterns to guide better interventions.",
+    "steps": ["Record time/place", "Record trigger", "Record behavior", "Record what worked"],
+    "tip": "Keep it simple—1 minute per entry."
+  }
+]

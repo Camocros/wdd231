@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nadia Behavior Framework | Contact</title>
+  <meta name="description" content="Contact page for feedback and questions about the Nadia Behavior Support Framework demo site.">
+  <meta name="author" content="Camilo Serna">
+
+  <meta property="og:title" content="Nadia Behavior Framework | Contact">
+  <meta property="og:description" content="Send a message and see your form data displayed on the action page.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+
+<body data-page="contact">
+<header>
+  <div class="container navbar">
+    <a class="brand" href="./index.html" aria-label="Home">
+  <img
+    src="images/nadialogo.png"
+    alt="Nadia Behavior logo"
+    width="200"
+    height="180"
+    loading="lazy"
+  >
+</a>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false">☀️ Light</button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">☰ Menu</button>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./catalog.html">Framework</a></li>
+        <li><a class="active" href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Contact</h1>
+  <p class="muted">This form demonstrates course form standards and displays submitted data on the action page.</p>
+
+  <form class="card" method="get" action="./thanks.html">
+    <label for="fullName">Full name</label>
+    <input id="fullName" name="fullName" type="text" required autocomplete="name">
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required autocomplete="email">
+
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic" required>
+      <option value="">Select one</option>
+      <option value="general">General feedback</option>
+      <option value="framework">Framework question</option>
+      <option value="accessibility">Accessibility note</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <p style="margin-top:1rem;">
+      <button class="btn" type="submit">Send</button>
+    </p>
+  </form>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Camilo Serna · <a href="./attributions.html">Attributions</a></p>
+    <p><a href="you tube video link here ">Project Video</a></p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navList = document.getElementById("navList");
+  if (menuBtn && navList) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navList.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>
